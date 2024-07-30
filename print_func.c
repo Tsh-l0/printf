@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 			else if (format[b] == 's')
 			{
 				s = va_arg(args, char *);
-				if (!s) s = "null)";
+				if (!s) s = "(null)";
 				while (*s) write(1, s++, 1), char_count++;
 			}
 			else if (format[b] == '%')
