@@ -22,7 +22,11 @@ int _printf(const char *format, ...)
 		{
 			b++;
 			if (format[b] == 'c')
-				char_c = va_arg(args, int), write(1, &char_c, 1), char_count++;
+			{
+				char_c = (char) va_arg(args, int);
+				write(1, &char_c, 1); 
+				char_count++;
+			}
 			else if (format[b] == 's')
 			{
 				s = va_arg(args, char *);
