@@ -31,11 +31,7 @@ int _printf(const char *format, ...)
 			{
 				s = va_arg(args, char *);
 				if (!s) s = "(null)";
-				while (*s) write(1, s++, 1), char_co
-			}
-			else if (format[b] == 'd' || format[b] == 'i')
-			{
-				char_count += print_ints(va_arg(args, int));
+				while (*s) write(1, s++, 1), char_count++;
 			}
 			else if (format[b] == '%')
 				write(1, "%", 1), char_count++;
